@@ -1,32 +1,21 @@
+package com.java.interview;
 
 public class MissingNumberOfArray {
-
+ 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		int arr[] = {1,2,4,6,8,9,10,7,3};
-		int n = arr.length;
-		int result = missingNumber(arr, n);
-		
-		System.out.println("Missing number of given array is: "+result);
+ 
+		int arr[] = new int[] { 1, 2, 6, 9, 5, 4, 7, 3 };
 
-	}
-	
-	public static int missingNumber(int arr[], int n) {
-		
-		int N = n + 1;
-		
-		int totalSumOfArray = N * (N+1) / 2;
-		
-		int arraySum = 0;
-		
-		for(int i=0;i<n;i++) {
-			arraySum += arr[i];
+		int N = 9;
+		int expectedSum = (N * (N + 1)) / 2;
+		int numSum = 0;
+ 
+		for (int i : arr) {
+			numSum = numSum + i;
 		}
-		
-		int missingNumber = totalSumOfArray - arraySum;
-		
-		return missingNumber;
+ 
+		System.out.println("Missing number is: " + (expectedSum - numSum));
 	}
-
 }
+
+ 
